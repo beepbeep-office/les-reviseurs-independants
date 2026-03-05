@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Indép' de la Révision · Experts coopératifs hors agriculture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:  #ffffff;
+  --paper:  #faf9f5;
+  --cream:  #f2ede3;
+  --teal:   #0a6b72;
+  --teal-d: #064e54;
+  --teal-l: #e6f4f5;
+  --coral:  #e8572a;
+  --amber:  #f0a500;
+  --amber-l:#fff7e0;
+  --ink:    #1a1f2e;
+  --mid:    #4a5568;
+  --muted:  #8896a9;
+  --border: #e2e8f0;
+  --r-red:  #fff0f0;
+  --r-red-b:#dc2626;
+  --r-amb:  #fffbeb;
+  --r-amb-b:#d97706;
+  --r-grn:  #f0fdf4;
+  --r-grn-b:#16a34a;
+  --r-blu:  #f0f7ff;
+  --r-blu-b:#2563eb;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.6}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero{
+  background:var(--teal);
+  position:relative;overflow:hidden;
+  padding:0;
+}
+/* Decorative circles */
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04);top:-200px;right:-150px;pointer-events:none}
+.hero::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(240,165,0,.15);bottom:-100px;left:10%;pointer-events:none}
+
+.hero-wrap{
+  max-width:1160px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 400px;
+  min-height:480px;
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.hero-wrap{grid-template-columns:1fr}.hero-right{display:none}}
+
+.hero-left{padding:4rem 3rem 4rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.9);font-size:.72rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content;
+}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.4rem,4.5vw,3.8rem);
+  line-height:1.05;font-weight:900;
+  color:white;margin-bottom:1.2rem;
+  letter-spacing:-.02em;
+}
+.hero h1 .hi{color:var(--amber);font-style:italic}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,.78);
+  max-width:500px;margin-bottom:2.2rem;line-height:1.75;
+}
+.hero-sub strong{color:white}
+
+.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.4rem}
+.hero-pill{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.85);font-size:.78rem;font-weight:500;
+  padding:.35rem .9rem;border-radius:100px;
+}
+.hero-pill b{color:var(--amber)}
+
+.btn-hero{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--amber);color:var(--ink);
+  font-weight:700;font-size:.95rem;
+  padding:.9rem 2rem;border-radius:50px;text-decoration:none;
+  transition:all .2s;width:fit-content;border:2px solid var(--amber);
+}
+.btn-hero:hover{background:white;color:var(--teal);border-color:white}
+
+/* Hero right panel */
+.hero-right{
+  background:rgba(255,255,255,.06);border-left:1px solid rgba(255,255,255,.1);
+  padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;
+}
+.hc{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;padding:1.1rem 1.2rem;
+  display:flex;align-items:center;gap:1rem;
+  transition:background .2s;
+}
+.hc:hover{background:rgba(255,255,255,.13)}
+.hc-av{
+  width:44px;height:44px;border-radius:50%;
+  border:2px solid var(--amber);overflow:hidden;flex-shrink:0;
+  background:var(--teal-d);display:flex;align-items:center;justify-content:center;
+}
+.hc-av img{width:100%;height:100%;object-fit:cover}
+.hc-av .ini{font-family:'Fraunces',serif;font-weight:900;font-size:1rem;color:var(--amber)}
+.hc-name{font-weight:700;font-size:.9rem;color:white}
+.hc-role{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.1rem}
+.hc-spec{font-size:.75rem;color:var(--amber);margin-top:.15rem;font-style:italic}
+
+/* ═══════════════════════════════════════
+   STRIP stats
+═══════════════════════════════════════ */
+.strip{background:var(--ink);display:flex;flex-wrap:wrap}
+.strip-cell{
+  flex:1;min-width:150px;padding:1.6rem 2rem;
+  border-right:1px solid rgba(255,255,255,.07);
+  text-align:center;
+}
+.strip-cell:last-child{border:none}
+.sn{
+  font-family:'Fraunces',serif;font-size:2.4rem;
+  font-weight:900;color:var(--amber);display:block;line-height:1;
+}
+.sl{font-size:.75rem;color:#718096;margin-top:.35rem;line-height:1.4}
+
+/* ═══════════════════════════════════════
+   TABS
+═══════════════════════════════════════ */
+.shell{max-width:1160px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.tab-nav{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  background:white;border-radius:14px;
+  border:1px solid var(--border);overflow:hidden;
+  margin-bottom:3rem;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+@media(max-width:700px){.tab-nav{grid-template-columns:1fr 1fr}}
+.tbtn{
+  background:none;border:none;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:600;
+  color:var(--muted);padding:1.1rem .8rem;
+  border-right:1px solid var(--border);transition:all .2s;
+  line-height:1.3;text-align:center;
+}
+.tbtn:last-child{border:none}
+.tbtn:hover{background:var(--teal-l);color:var(--teal)}
+.tbtn.active{background:var(--teal);color:white}
+.tbtn .tn{display:block;font-size:.65rem;opacity:.7;margin-top:.15rem;font-weight:400}
+
+.tab-pane{display:none;animation:up .3s ease both}
+.tab-pane.active{display:block}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* section header */
+.sh{margin-bottom:2.5rem}
+.sh-tag{
+  display:inline-block;background:var(--teal-l);color:var(--teal);
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .8rem;border-radius:100px;margin-bottom:.8rem;
+}
+.sh h2{
+  font-family:'Fraunces',serif;font-size:2.1rem;font-weight:900;
+  color:var(--ink);margin-bottom:.5rem;line-height:1.15;letter-spacing:-.02em;
+}
+.sh p{color:var(--mid);font-size:.95rem;line-height:1.75;max-width:580px}
+
+/* ═══════════════════════════════════════
+   TAB 1 — DIAGNOSTIC
+   Layout 3 cols: famille | questions | résultat
+═══════════════════════════════════════ */
+.diag-layout{
+  display:grid;grid-template-columns:220px 1fr 280px;
+  gap:1.5rem;align-items:start;
+}
+@media(max-width:1000px){.diag-layout{grid-template-columns:1fr}.diag-result-col{order:3}}
+@media(max-width:700px){.diag-layout{grid-template-columns:1fr}}
+
+/* col 1 — famille picker */
+.fam-col{}
+.fam-col h3{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.9rem}
+.fam-btn{
+  display:flex;align-items:center;gap:.7rem;width:100%;
+  background:white;border:1px solid var(--border);border-radius:8px;
+  padding:.7rem .9rem;margin-bottom:.5rem;cursor:pointer;
+  text-align:left;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.fam-btn:hover{border-color:var(--teal);background:var(--teal-l)}
+.fam-btn.active{border-color:var(--teal);background:var(--teal);color:white}
+.fam-ico{font-size:1.1rem;flex-shrink:0}
+.fam-lbl{font-size:.8rem;font-weight:600;line-height:1.2}
+.fam-btn.active .fam-lbl{color:white}
+
+/* col 2 — questions */
+.q-col{}
+.q-col-head{
+  background:var(--teal-l);border:1px solid rgba(10,107,114,.15);
+  border-radius:8px;padding:.8rem 1.1rem;margin-bottom:1.2rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+}
+.qch-fam{font-size:.8rem;font-weight:700;color:var(--teal)}
+.qch-hint{font-size:.75rem;color:var(--muted);font-style:italic}
+
+.q-block{margin-bottom:1.1rem}
+.q-block label{
+  display:block;font-size:.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  color:var(--ink);margin-bottom:.5rem;
+}
+.q-block label .q-spec-badge{
+  background:var(--amber);color:white;
+  font-size:.6rem;padding:.1rem .4rem;border-radius:3px;
+  margin-left:.4rem;vertical-align:middle;letter-spacing:0;text-transform:none;font-weight:600;
+}
+.q-block select{
+  width:100%;padding:.7rem .9rem;border:1px solid var(--border);border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;
+  background:white;color:var(--ink);cursor:pointer;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238896a9' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .7rem center;
+  transition:border-color .2s;
+}
+.q-block select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(10,107,114,.1)}
+.q-block.spec select{border-color:rgba(240,165,0,.4);background-color:#fffdf5}
+
+.btn-run{
+  width:100%;padding:1rem;border:none;border-radius:8px;
+  background:var(--coral);color:white;
+  font-family:'Fraunces',serif;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:all .2s;margin-top:.5rem;
+  letter-spacing:-.01em;
+}
+.btn-run:hover{background:#c94420;transform:translateY(-1px);box-shadow:0 4px 12px rgba(232,87,42,.3)}
+
+/* col 3 — résultat permanent */
+.diag-result-col{}
+.result-box{
+  background:white;border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;position:sticky;top:1.5rem;
+}
+.result-box h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem}
+.result-empty{text-align:center;padding:2rem 1rem}
+.result-empty .re-ico{font-size:2.5rem;margin-bottom:.8rem}
+.result-empty p{font-size:.85rem;color:var(--muted);line-height:1.6}
+.result-card{display:none;border-radius:8px;padding:1.2rem;border-left:4px solid}
+.result-card.visible{display:block}
+.result-card strong{display:block;font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.result-card p{font-size:.82rem;line-height:1.7}
+.rc-alert{background:var(--r-red);border-left-color:var(--r-red-b);color:#7f1d1d}
+.rc-warn{background:var(--r-amb);border-left-color:var(--r-amb-b);color:#78350f}
+.rc-ok{background:var(--r-grn);border-left-color:var(--r-grn-b);color:#14532d}
+.rc-info{background:var(--r-blu);border-left-color:var(--r-blu-b);color:#1e3a8a}
+
+.advice-block{
+  margin-top:1.2rem;background:var(--cream);border-radius:8px;
+  padding:1rem;font-size:.8rem;line-height:1.65;color:var(--mid);
+}
+.advice-block strong{display:block;margin-bottom:.3rem;color:var(--ink);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+
+/* placeholder when no family selected */
+.no-fam-msg{
+  background:white;border:2px dashed var(--border);border-radius:12px;
+  padding:3rem;text-align:center;
+}
+.no-fam-msg .nf-ico{font-size:3rem;margin-bottom:1rem}
+.no-fam-msg p{color:var(--muted);font-size:.9rem}
+
+/* ═══════════════════════════════════════
+   TAB 2 — CONNAISSEZ-VOUS LA RÉVISION ?
+═══════════════════════════════════════ */
+.krev-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:700px){.krev-layout{grid-template-columns:1fr}}
+
+/* Flip cards "Vrai ou Faux" */
+.myths-title{
+  font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;
+  margin-bottom:1.2rem;color:var(--ink);
+}
+.myth-card{
+  perspective:1000px;margin-bottom:1rem;height:110px;cursor:pointer;
+}
+.myth-inner{
+  position:relative;width:100%;height:100%;
+  transition:transform .5s;transform-style:preserve-3d;
+}
+.myth-card.flipped .myth-inner{transform:rotateY(180deg)}
+
+.myth-front,.myth-back{
+  position:absolute;inset:0;border-radius:10px;padding:1rem 1.2rem;
+  backface-visibility:hidden;display:flex;align-items:center;gap:1rem;
+}
+.myth-front{
+  background:white;border:1px solid var(--border);
+  font-weight:600;font-size:.88rem;color:var(--ink);
+}
+.myth-back{
+  background:var(--teal);transform:rotateY(180deg);
+  font-size:.82rem;line-height:1.5;color:white;
+}
+.myth-front .mf-label{
+  background:var(--amber-l);color:var(--amber);
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:.2rem .5rem;border-radius:4px;flex-shrink:0;
+}
+.myth-back .mb-verdict{
+  font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;
+  flex-shrink:0;line-height:1;
+}
+.mb-verdict.vrai{color:var(--amber)}
+.mb-verdict.faux{color:#f87171}
+
+.myth-hint{font-size:.72rem;color:var(--muted);margin-bottom:1.2rem;font-style:italic}
+
+/* Key facts column */
+.kfacts{}
+.kfact-item{
+  background:white;border:1px solid var(--border);border-radius:10px;
+  padding:1.2rem 1.4rem;margin-bottom:.9rem;
+  display:flex;gap:1rem;align-items:flex-start;
+  transition:box-shadow .2s;
+}
+.kfact-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.07)}
+.kfi-ico{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--teal-l);display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.kfi-body{}
+.kfi-q{font-weight:700;font-size:.85rem;margin-bottom:.3rem;color:var(--ink)}
+.kfi-a{font-size:.8rem;color:var(--mid);line-height:1.6}
+
+/* Timeline légale */
+.legal-timeline{grid-column:1/-1;background:white;border:1px solid var(--border);border-radius:12px;padding:2rem}
+.lt-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;margin-bottom:1.5rem}
+.lt-row{
+  display:flex;align-items:stretch;gap:0;
+}
+.lt-step{
+  flex:1;text-align:center;position:relative;padding:0 .5rem;
+}
+.lt-step::after{
+  content:'→';position:absolute;right:-8px;top:26px;
+  font-size:1rem;color:var(--muted);
+}
+.lt-step:last-child::after{display:none}
+.lt-dot{
+  width:52px;height:52px;border-radius:50%;margin:0 auto .7rem;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;border:2px solid var(--border);background:var(--paper);
+}
+.lt-step.active .lt-dot{background:var(--teal);border-color:var(--teal)}
+.lt-step-label{font-size:.75rem;font-weight:600;color:var(--ink);line-height:1.3}
+.lt-step-sub{font-size:.68rem;color:var(--muted);margin-top:.2rem;line-height:1.3}
+@media(max-width:600px){.lt-row{flex-direction:column;gap:.8rem}.lt-step::after{display:none}}
+
+/* ═══════════════════════════════════════
+   TAB 3 — NOS APPORTS (valeur)
+═══════════════════════════════════════ */
+.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:680px){.val-grid{grid-template-columns:1fr}}
+.val-card{background:white;border:1px solid var(--border);border-radius:12px;padding:1.8rem}
+.val-card h4{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;margin-bottom:1.3rem;padding-bottom:.8rem;border-bottom:2px solid var(--cream)}
+.metric{display:flex;gap:.9rem;margin-bottom:1.3rem;align-items:flex-start}
+.mn{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:var(--teal);flex-shrink:0;line-height:1}
+.mt{font-size:.84rem;color:var(--mid);line-height:1.65;padding-top:.2rem}
+.tl{list-style:none;padding-left:1.3rem;position:relative}
+.tl::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:2px;background:linear-gradient(var(--teal),var(--amber))}
+.tl li{position:relative;margin-bottom:1.1rem}
+.tl li::before{content:'';position:absolute;left:-1.65rem;top:.4rem;width:8px;height:8px;border-radius:50%;background:var(--teal);outline:3px solid white;outline-offset:0}
+.tl h5{font-size:.85rem;font-weight:700;margin-bottom:.2rem}
+.tl p{font-size:.8rem;color:var(--mid);line-height:1.55}
+.qbox{grid-column:1/-1;background:var(--teal);color:white;border-radius:12px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+.qm{font-family:'Fraunces',serif;font-size:5rem;line-height:.6;color:var(--amber);flex-shrink:0;margin-top:.5rem}
+.qbox blockquote{font-size:.95rem;line-height:1.8;font-style:italic;opacity:.9}
+.qbox cite{display:block;margin-top:.8rem;font-style:normal;font-size:.72rem;color:var(--amber);font-weight:600;letter-spacing:.05em}
+
+/* ═══════════════════════════════════════
+   TAB 4 — LE TRIO
+═══════════════════════════════════════ */
+.manifesto{
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 100%);
+  color:white;border-radius:16px;padding:2.5rem;margin-bottom:2rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+}
+@media(max-width:680px){.manifesto{grid-template-columns:1fr}}
+.mani-text h3{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;margin-bottom:.8rem;line-height:1.1}
+.mani-text h3 em{color:var(--amber);font-style:italic}
+.mani-text p{font-size:.9rem;line-height:1.75;opacity:.85}
+.mani-values{display:flex;flex-direction:column;gap:.8rem}
+.mval{display:flex;gap:.9rem;align-items:flex-start}
+.mval-ico{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.mval-body h5{font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.mval-body p{font-size:.78rem;opacity:.7;line-height:1.5}
+
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.expert{
+  background:white;border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;transition:all .25s;
+}
+.expert:hover{box-shadow:0 8px 30px rgba(0,0,0,.1);transform:translateY(-3px)}
+.exp-top{
+  background:var(--teal-l);padding:1.5rem 1.5rem 2.5rem;position:relative;
+}
+.exp-badge{
+  display:inline-block;background:var(--teal);color:white;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.25rem .65rem;border-radius:4px;margin-bottom:.7rem;
+}
+.exp-name{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--teal-d)}
+.exp-title{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:.2rem}
+.exp-av{
+  position:absolute;bottom:-26px;right:1.5rem;
+  width:52px;height:52px;border-radius:50%;
+  border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.15);
+  overflow:hidden;background:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+}
+.exp-av img{width:100%;height:100%;object-fit:cover}
+.exp-av .ini{font-family:'Fraunces',serif;font-size:1rem;font-weight:900;color:var(--teal)}
+.exp-body{padding:2.2rem 1.5rem 1.5rem}
+.exp-body p{font-size:.87rem;color:var(--mid);line-height:1.72;margin-bottom:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.7rem;font-weight:600;padding:.25rem .6rem;border-radius:4px;background:var(--teal-l);color:var(--teal);border:1px solid rgba(10,107,114,.15)}
+
+/* ═══════════════════════════════════════
+   TAB 5 — CONTACT
+═══════════════════════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;align-items:start}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
+.cl h2{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;margin-bottom:.8rem;line-height:1.1}
+.cl p{font-size:.9rem;color:var(--mid);line-height:1.78;margin-bottom:1.5rem}
+.promises{list-style:none}
+.promises li{
+  display:flex;gap:.9rem;align-items:flex-start;
+  padding:.85rem 0;border-bottom:1px solid var(--border);font-size:.87rem;
+}
+.promises li:last-child{border:none}
+.p-ico{
+  width:32px;height:32px;border-radius:8px;background:var(--teal-l);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
+}
+.p-t strong{color:var(--ink);font-weight:700}
+.p-t{color:var(--mid);line-height:1.55}
+
+.cform{background:white;border:1px solid var(--border);border-radius:14px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.cform h4{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;margin-bottom:1.5rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);margin-bottom:.4rem}
+.field input,.field select,.field textarea{
+  width:100%;padding:.75rem 1rem;border:1px solid var(--border);border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;
+  background:var(--paper);color:var(--ink);transition:all .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(10,107,114,.1);background:white}
+.field textarea{resize:vertical;min-height:80px}
+.btn-send{
+  width:100%;padding:1rem;border:none;border-radius:8px;
+  background:var(--teal);color:white;
+  font-family:'Fraunces',serif;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:all .2s;letter-spacing:-.01em;
+}
+.btn-send:hover{background:var(--teal-d);box-shadow:0 4px 16px rgba(10,107,114,.3)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{
+  background:var(--ink);color:#718096;
+  text-align:center;padding:2rem 1rem;
+  font-size:.75rem;line-height:1.7;
+}
+footer strong{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <div class="hero-tag">✦ Révision coopérative · Hors agriculture · Agréés HCCA</div>
+      <h1>Les Indép'<br>de la <span class="hi">Révision</span></h1>
+      <p class="hero-sub"><strong>Trois réviseurs indépendants,</strong> une alliance choisie. Nous unissons nos expertises complémentaires pour offrir la révision coopérative la plus complète du marché.</p>
+      <div class="hero-pills">
+        <div class="hero-pill"><b>Pierre</b> · Juridique &amp; Doctrine</div>
+        <div class="hero-pill"><b>Philippe</b> · Finance &amp; Viabilité</div>
+        <div class="hero-pill"><b>Corinne</b> · Terrain &amp; Saisine</div>
+      </div>
+      <a href="#" class="btn-hero" onclick="lancerDiagnostic();return false;">Démarrer mon diagnostic flash →</a>
+    </div>
+    <div class="hero-right">
+      <div class="hc">
+        <div class="hc-av">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#0d4f55"/>
+            <!-- corps costume -->
+            <rect x="13" y="28" width="18" height="12" rx="2" fill="#1a7a83"/>
+            <!-- cravate -->
+            <polygon points="22,26 20,30 22,34 24,30" fill="#f0a500"/>
+            <!-- tête -->
+            <circle cx="22" cy="20" r="7" fill="#e8c9a0"/>
+            <!-- cheveux courts gris -->
+            <path d="M15 18 Q15 11 22 11 Q29 11 29 18 Q27 13 22 13 Q17 13 15 18Z" fill="#7a8090"/>
+            <!-- lunettes -->
+            <rect x="17" y="18.5" width="4" height="3" rx="1.5" fill="none" stroke="#4a3020" stroke-width=".8"/>
+            <rect x="23" y="18.5" width="4" height="3" rx="1.5" fill="none" stroke="#4a3020" stroke-width=".8"/>
+            <line x1="21" y1="20" x2="23" y2="20" stroke="#4a3020" stroke-width=".8"/>
+            <!-- livre dans la main -->
+            <rect x="7" y="31" width="7" height="5" rx="1" fill="#f0a500"/>
+            <line x1="10.5" y1="31" x2="10.5" y2="36" stroke="#d97706" stroke-width=".6"/>
+          </svg>
+        </div>
+        <div><div class="hc-name">Pierre Laborde</div><div class="hc-role">Réviseur agréé · Indépendant</div><div class="hc-spec">Statuts · Doctrine · Loi 1947</div></div>
+      </div>
+      <div class="hc">
+        <div class="hc-av">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#1a4a2e"/>
+            <!-- corps veste -->
+            <rect x="13" y="28" width="18" height="12" rx="2" fill="#2d7a4a"/>
+            <!-- chemise blanche col -->
+            <rect x="20" y="27" width="4" height="4" rx=".5" fill="#e8f0e8"/>
+            <!-- tête -->
+            <circle cx="22" cy="20" r="7" fill="#d4a875"/>
+            <!-- cheveux courts bruns -->
+            <path d="M15 19 Q15 11 22 11 Q29 11 29 19 Q28 14 22 14 Q16 14 15 19Z" fill="#5c3d1a"/>
+            <!-- barbe légère -->
+            <path d="M17 22 Q18 25 22 25 Q26 25 27 22" stroke="#8a5a2a" stroke-width=".8" fill="none"/>
+            <!-- graphique mini -->
+            <rect x="7" y="33" width="2" height="3" rx=".5" fill="#f0a500"/>
+            <rect x="10" y="31" width="2" height="5" rx=".5" fill="#f0a500"/>
+            <rect x="13" y="29" width="2" height="7" rx=".5" fill="#f0c040"/>
+          </svg>
+        </div>
+        <div><div class="hc-name">Philippe Fourquet</div><div class="hc-role">Réviseur agréé · Indépendant</div><div class="hc-spec">Audit · Viabilité · Financement</div></div>
+      </div>
+      <div class="hc">
+        <div class="hc-av">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#4a1a5e"/>
+            <!-- corps -->
+            <rect x="13" y="28" width="18" height="12" rx="2" fill="#7a3a9e"/>
+            <!-- foulard -->
+            <path d="M18 28 Q22 32 26 28" stroke="#f0a500" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- tête -->
+            <circle cx="22" cy="20" r="7" fill="#e8b89a"/>
+            <!-- cheveux mi-longs -->
+            <path d="M15 17 Q15 10 22 10 Q29 10 29 17 Q29 22 28 24 Q27 16 22 16 Q17 16 16 24 Q15 22 15 17Z" fill="#3a2010"/>
+            <!-- sourire -->
+            <path d="M19 22 Q22 24.5 25 22" stroke="#c07850" stroke-width=".8" fill="none" stroke-linecap="round"/>
+            <!-- clipboard -->
+            <rect x="7" y="30" width="7" height="6" rx="1" fill="#e0d0f0"/>
+            <rect x="9" y="28.5" width="3" height="1.5" rx=".5" fill="#9a70be"/>
+            <line x1="8.5" y1="32" x2="13" y2="32" stroke="#9a70be" stroke-width=".6"/>
+            <line x1="8.5" y1="33.5" x2="13" y2="33.5" stroke="#9a70be" stroke-width=".6"/>
+          </svg>
+        </div>
+        <div><div class="hc-name">Corinne Devienne</div><div class="hc-role">Réviseuse agréée · Indépendante</div><div class="hc-spec">Saisine · Terrain · Médiation</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── STRIP ── -->
+<div class="strip">
+  <div class="strip-cell"><span class="sn">5 ans</span><div class="sl">Périodicité légale max.</div></div>
+  <div class="strip-cell"><span class="sn">8</span><div class="sl">Familles coopératives couvertes</div></div>
+  <div class="strip-cell"><span class="sn">3×1</span><div class="sl">Indépendants · Alliance unique</div></div>
+  <div class="strip-cell"><span class="sn">+12%</span><div class="sl">Survie à 10 ans des coopératives révisées</div></div>
+  <div class="strip-cell"><span class="sn">48h</span><div class="sl">Délai de réponse garanti</div></div>
+</div>
+
+<!-- ── SHELL ── -->
+<div class="shell">
+  <nav class="tab-nav">
+    <button class="tbtn active" data-tab="diag"   onclick="activateTab('diag')">🔍 Diagnostic<span class="tn">Flash personnalisé</span></button>
+    <button class="tbtn"        data-tab="krev"    onclick="activateTab('krev')">💡 La révision<span class="tn">Vous connaissez ?</span></button>
+    <button class="tbtn"        data-tab="valeur"  onclick="activateTab('valeur')">📈 Nos apports<span class="tn">Valeur &amp; benchmark</span></button>
+    <button class="tbtn"        data-tab="equipe"  onclick="activateTab('equipe')">🤝 Le trio<span class="tn">Qui sommes-nous ?</span></button>
+    <button class="tbtn"        data-tab="contact" onclick="activateTab('contact')">✉️ Contact<span class="tn">Prise de contact</span></button>
+  </nav>
+
+  <!-- ══════ DIAGNOSTIC ══════ -->
+  <div id="pane-diag" class="tab-pane active">
+    <div class="sh">
+      <span class="sh-tag">Outil réglementaire</span>
+      <h2>Diagnostic selon votre famille coopérative</h2>
+      <p>Choisissez votre type de coopérative. Les questions s'adaptent instantanément à votre situation réglementaire spécifique.</p>
+    </div>
+    <div class="diag-layout">
+      <!-- col 1 -->
+      <div class="fam-col">
+        <h3>Votre famille</h3>
+        <button class="fam-btn" onclick="selectFam('scop',this)"><span class="fam-ico">🏭</span><span class="fam-lbl">SCOP / SCIC</span></button>
+        <button class="fam-btn" onclick="selectFam('hlm',this)"><span class="fam-ico">🏠</span><span class="fam-lbl">Coopérative HLM</span></button>
+        <button class="fam-btn" onclick="selectFam('conso',this)"><span class="fam-ico">🛒</span><span class="fam-lbl">Coop. de Conso.</span></button>
+        <button class="fam-btn" onclick="selectFam('artisan',this)"><span class="fam-ico">🔧</span><span class="fam-lbl">Artisans / Transp.</span></button>
+        <button class="fam-btn" onclick="selectFam('maritime',this)"><span class="fam-ico">⚓</span><span class="fam-lbl">Maritime</span></button>
+        <button class="fam-btn" onclick="selectFam('scolaire',this)"><span class="fam-ico">🎒</span><span class="fam-lbl">Scolaire / OCCE</span></button>
+        <button class="fam-btn" onclick="selectFam('banque',this)"><span class="fam-ico">🏦</span><span class="fam-lbl">Banque / Mutuelle</span></button>
+        <button class="fam-btn" onclick="selectFam('autre',this)"><span class="fam-ico">🔍</span><span class="fam-lbl">Autre / Généraliste</span></button>
+      </div>
+
+      <!-- col 2 -->
+      <div class="q-col" id="q-col">
+        <div class="no-fam-msg" id="no-fam">
+          <div class="nf-ico">👈</div>
+          <p>Sélectionnez votre famille coopérative pour afficher les questions adaptées à votre situation.</p>
+        </div>
+        <div id="q-form" style="display:none">
+          <div class="q-col-head">
+            <span class="qch-fam" id="qch-fam">—</span>
+            <span class="qch-hint">🔶 Questions spécifiques = propres à votre famille</span>
+          </div>
+          <div id="q-blocks"><!-- injecté dynamiquement --></div>
+          <button class="btn-run" onclick="analyser()">Analyser ma situation →</button>
+        </div>
+      </div>
+
+      <!-- col 3 -->
+      <div class="diag-result-col">
+        <div class="result-box">
+          <h4>Résultat du diagnostic</h4>
+          <div class="result-empty" id="res-empty">
+            <div class="re-ico">🎯</div>
+            <p>Renseignez le formulaire et cliquez sur "Analyser" pour obtenir votre diagnostic réglementaire.</p>
+          </div>
+          <div class="result-card" id="res-card"></div>
+          <div class="advice-block" id="res-advice" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ CONNAISSEZ-VOUS LA RÉVISION ? ══════ -->
+  <div id="pane-krev" class="tab-pane">
+    <div class="sh">
+      <span class="sh-tag">Pédagogie coopérative</span>
+      <h2>Connaissez-vous vraiment la révision ?</h2>
+      <p>Beaucoup de coopératives la subissent ou l'ignorent. Voici tout ce qu'il faut savoir — avec quelques idées reçues à démonter.</p>
+    </div>
+    <div class="krev-layout">
+      <!-- Myths / flip cards -->
+      <div>
+        <div class="myths-title">🃏 Vrai ou Faux ? Cliquez pour révéler</div>
+        <p class="myth-hint">Chaque carte se retourne au clic — testez vos connaissances !</p>
+
+        <div class="myth-card" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-front"><span class="mf-label">Idée reçue</span><span>La révision coopérative, c'est la même chose que l'audit légal d'un commissaire aux comptes.</span></div>
+            <div class="myth-back"><span class="mb-verdict faux">FAUX</span><span>L'audit légal vérifie les comptes. La révision coopérative vérifie la conformité au fait coopératif : respect des statuts, des règles de la loi 1947, des droits des associés… ce sont deux missions totalement distinctes.</span></div>
+          </div>
+        </div>
+
+        <div class="myth-card" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-front"><span class="mf-label">Idée reçue</span><span>Seules les grandes coopératives sont soumises à révision obligatoire.</span></div>
+            <div class="myth-back"><span class="mb-verdict faux">FAUX</span><span>La taille n'est pas le seul critère. Une demande du tiers des administrateurs ou de 10% des associés suffit à déclencher une révision obligatoire — quelle que soit la taille de la structure.</span></div>
+          </div>
+        </div>
+
+        <div class="myth-card" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-front"><span class="mf-label">Idée reçue</span><span>La révision n'apporte rien de concret, c'est juste un formalisme administratif.</span></div>
+            <div class="myth-back"><span class="mb-verdict faux">FAUX</span><span>Le rapport de révision est un outil reconnu par les banques, les administrations et les associés. Il sécurise les avantages fiscaux, renforce la gouvernance et peut éviter des contentieux coûteux.</span></div>
+          </div>
+        </div>
+
+        <div class="myth-card" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-front"><span class="mf-label">Bon à savoir</span><span>Une coopérative non révisée dans les délais légaux expose ses administrateurs personnellement.</span></div>
+            <div class="myth-back"><span class="mb-verdict vrai">VRAI</span><span>Le non-respect de l'obligation de révision peut engager la responsabilité personnelle des dirigeants et administrateurs, en cas de litige avec les associés ou avec l'administration fiscale.</span></div>
+          </div>
+        </div>
+
+        <div class="myth-card" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-front"><span class="mf-label">Bon à savoir</span><span>La révision peut être demandée même si les comptes sont à l'équilibre et la gouvernance irréprochable.</span></div>
+            <div class="myth-back"><span class="mb-verdict vrai">VRAI</span><span>Une révision proactive renforce la crédibilité d'une coopérative en bonne santé. Elle valide les pratiques et rassure les partenaires financiers — c'est un levier de communication autant qu'un contrôle.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key facts -->
+      <div class="kfacts">
+        <div class="kfact-item">
+          <div class="kfi-ico">⚖️</div>
+          <div class="kfi-body">
+            <div class="kfi-q">Quel est le texte de référence ?</div>
+            <div class="kfi-a">La <strong>loi n°47-1775 du 10 septembre 1947</strong> portant statut de la coopération fixe le cadre général. Des textes sectoriels s'appliquent selon la famille (SCOP : loi du 19/07/1978, HLM : CCH L.422-3, etc.).</div>
+          </div>
+        </div>
+        <div class="kfact-item">
+          <div class="kfi-ico">🕐</div>
+          <div class="kfi-body">
+            <div class="kfi-q">À quelle fréquence doit-on réviser ?</div>
+            <div class="kfi-a">Au moins tous les <strong>5 ans</strong> pour les coopératives dépassant 2 des 3 seuils légaux (CA ≥ 2M€, bilan ≥ 1M€, ≥ 50 associés). Certaines familles ont des obligations plus fréquentes (HLM, scolaires…).</div>
+          </div>
+        </div>
+        <div class="kfact-item">
+          <div class="kfi-ico">🎓</div>
+          <div class="kfi-body">
+            <div class="kfi-q">Qui peut réaliser une révision coopérative ?</div>
+            <div class="kfi-a">Uniquement un réviseur <strong>agréé par le HCCA</strong> (Haut Conseil de la Coopération et de l'Agriculture) ou par un organisme de révision reconnu. Ce n'est pas une mission réservée aux experts-comptables ou CAC.</div>
+          </div>
+        </div>
+        <div class="kfact-item">
+          <div class="kfi-ico">📄</div>
+          <div class="kfi-body">
+            <div class="kfi-q">Que contient un rapport de révision ?</div>
+            <div class="kfi-a">Le rapport analyse la conformité statutaire, les relations avec les associés, la viabilité économique, les règles propres à la famille coopérative, et formule des <strong>recommandations d'amélioration</strong> soumises à l'AG.</div>
+          </div>
+        </div>
+        <div class="kfact-item">
+          <div class="kfi-ico">💶</div>
+          <div class="kfi-body">
+            <div class="kfi-q">Quel coût pour une révision ?</div>
+            <div class="kfi-a">Le coût est calculé au réel selon la taille et la complexité. Il est sans commune mesure avec le risque financier et juridique qu'une révision évite. <strong>Premier entretien de cadrage offert</strong> par notre trio.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline légale -->
+      <div class="legal-timeline">
+        <div class="lt-title">📋 Le déroulement type d'une mission de révision</div>
+        <div class="lt-row">
+          <div class="lt-step active"><div class="lt-dot">📞</div><div class="lt-step-label">Saisine</div><div class="lt-step-sub">Demande de mission, cadrage</div></div>
+          <div class="lt-step active"><div class="lt-dot">📂</div><div class="lt-step-label">Instruction</div><div class="lt-step-sub">Collecte documents &amp; statuts</div></div>
+          <div class="lt-step active"><div class="lt-dot">🔍</div><div class="lt-step-label">Révision terrain</div><div class="lt-step-sub">Entretiens, audits, analyses</div></div>
+          <div class="lt-step active"><div class="lt-dot">✍️</div><div class="lt-step-label">Rapport</div><div class="lt-step-sub">Rédaction &amp; préconisations</div></div>
+          <div class="lt-step"><div class="lt-dot">🏛️</div><div class="lt-step-label">Assemblée Générale</div><div class="lt-step-sub">Présentation aux associés</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ VALEUR ══════ -->
+  <div id="pane-valeur" class="tab-pane">
+    <div class="sh">
+      <span class="sh-tag">Valeur ajoutée</span>
+      <h2>Bien plus qu'un contrôle formel</h2>
+      <p>Ce que notre alliance de trois indépendants apporte, concrètement, à votre coopérative.</p>
+    </div>
+    <div class="val-grid">
+      <div class="val-card">
+        <h4>Impact financier &amp; bancaire</h4>
+        <div class="metric"><div class="mn">×2</div><div class="mt">Capacité de négociation avec les partenaires bancaires. Le rapport de révision est un signal fort de viabilité, reconnu et valorisé dans les dossiers de financement.</div></div>
+        <div class="metric"><div class="mn">100%</div><div class="mt">Sécurisation des avantages fiscaux liés au respect strict des règles d'exclusivisme et de non-lucrativité du statut coopératif.</div></div>
+        <div class="metric"><div class="mn">−40%</div><div class="mt">Réduction estimée du risque de contentieux entre associés grâce à la médiation structurelle du réviseur de terrain.</div></div>
+      </div>
+      <div class="val-card">
+        <h4>Ce que couvre notre révision</h4>
+        <ul class="tl">
+          <li><h5>Conformité statutaire</h5><p>Adéquation aux textes de la loi 1947, règlements sectoriels et recommandations HCCA.</p></li>
+          <li><h5>Relations sociétaires</h5><p>Analyse des flux, du principe de double qualité et de l'exclusivisme.</p></li>
+          <li><h5>Viabilité économique</h5><p>Solidité des fonds propres, rentabilité par sociétaire, trajectoire à 3 ans.</p></li>
+          <li><h5>Spécificités de famille</h5><p>Obligations propres à chaque famille (SCOP, HLM, Consommateurs, Maritime…)</p></li>
+          <li><h5>Rapport &amp; recommandations</h5><p>Préconisations concrètes présentées à l'assemblée générale.</p></li>
+        </ul>
+      </div>
+      <div class="qbox">
+        <div class="qm">&ldquo;</div>
+        <div>
+          <blockquote>La révision coopérative est un acte positif de la gouvernance qui analyse l'environnement économique, consolide les liens institutionnels et garantit la conformité au fait coopératif — bien au-delà d'un simple contrôle comptable.</blockquote>
+          <cite>— Cahier des charges HCCA · Conseil Supérieur de la Coopération</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ TRIO ══════ -->
+  <div id="pane-equipe" class="tab-pane">
+    <div class="sh">
+      <span class="sh-tag">Le trio</span>
+      <h2>Trois indépendants, une alliance</h2>
+    </div>
+    <div class="manifesto">
+      <div class="mani-text">
+        <h3>L'indépendance<br>comme <em>force</em></h3>
+        <p>Nous ne sommes pas un cabinet. Trois réviseurs agréés, indépendants dans leur pratique, qui choisissent librement de s'allier pour offrir une révision plus riche, plus complète et plus impartiale. Pas de hiérarchie. Pas de conflit interne. Juste trois expertises au service d'une même éthique.</p>
+      </div>
+      <div class="mani-values">
+        <div class="mval"><div class="mval-ico">⚖️</div><div class="mval-body"><h5>Indépendance totale</h5><p>Chacun reste maître de sa pratique et de son agrément.</p></div></div>
+        <div class="mval"><div class="mval-ico">🔬</div><div class="mval-body"><h5>Complémentarité réelle</h5><p>Juridique, financier, terrain : trois angles pour une seule mission.</p></div></div>
+        <div class="mval"><div class="mval-ico">🤝</div><div class="mval-body"><h5>Alliance sur-mesure</h5><p>On mobilise un, deux ou les trois selon ce que votre mission nécessite vraiment.</p></div></div>
+        <div class="mval"><div class="mval-ico">🎯</div><div class="mval-body"><h5>Zéro conflit d'intérêts</h5><p>Aucun lien capitalistique, aucune pression commerciale entre nous.</p></div></div>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="expert">
+        <div class="exp-top">
+          <span class="exp-badge">Juridique &amp; Doctrinal</span>
+          <div class="exp-name">Pierre Laborde</div>
+          <div class="exp-title">Réviseur agréé · Indépendant</div>
+          <div class="exp-av">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="26" fill="#0d4f55"/>
+              <rect x="15" y="33" width="22" height="15" rx="2" fill="#1a7a83"/>
+              <polygon points="26,31 23.5,36 26,41 28.5,36" fill="#f0a500"/>
+              <circle cx="26" cy="23" r="8.5" fill="#e8c9a0"/>
+              <path d="M17.5 21 Q17.5 12 26 12 Q34.5 12 34.5 21 Q32 14.5 26 14.5 Q20 14.5 17.5 21Z" fill="#7a8090"/>
+              <rect x="19.5" y="21.5" width="5" height="3.5" rx="1.8" fill="none" stroke="#4a3020" stroke-width="1"/>
+              <rect x="27.5" y="21.5" width="5" height="3.5" rx="1.8" fill="none" stroke="#4a3020" stroke-width="1"/>
+              <line x1="24.5" y1="23.2" x2="27.5" y2="23.2" stroke="#4a3020" stroke-width="1"/>
+              <rect x="7" y="37" width="9" height="7" rx="1.5" fill="#f0a500"/>
+              <line x1="11.5" y1="37" x2="11.5" y2="44" stroke="#d97706" stroke-width=".8"/>
+              <line x1="8" y1="39.5" x2="15" y2="39.5" stroke="#d97706" stroke-width=".5"/>
+              <line x1="8" y1="41" x2="15" y2="41" stroke="#d97706" stroke-width=".5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p>Vice-Président INEXAGRI et co-auteur de la doctrine coopérative. Pierre garantit l'inattaquabilité de votre ingénierie statutaire et préserve vos avantages spécifiques face aux évolutions législatives.</p>
+          <div class="tags"><span class="tag">Statuts</span><span class="tag">Loi 1947</span><span class="tag">Doctrine</span><span class="tag">Fiscalité coop.</span></div>
+        </div>
+      </div>
+      <div class="expert">
+        <div class="exp-top">
+          <span class="exp-badge">Stratégie Financière</span>
+          <div class="exp-name">Philippe Fourquet</div>
+          <div class="exp-title">Réviseur agréé · Indépendant</div>
+          <div class="exp-av">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="26" fill="#1a4a2e"/>
+              <rect x="15" y="33" width="22" height="15" rx="2" fill="#2d7a4a"/>
+              <rect x="23" y="32" width="6" height="5" rx=".5" fill="#e8f4e8"/>
+              <circle cx="26" cy="23" r="8.5" fill="#d4a875"/>
+              <path d="M17.5 22 Q17.5 12 26 12 Q34.5 12 34.5 22 Q33 15 26 15 Q19 15 17.5 22Z" fill="#5c3d1a"/>
+              <path d="M19.5 25 Q21 28.5 26 28.5 Q31 28.5 32.5 25" stroke="#8a5a2a" stroke-width="1" fill="none"/>
+              <rect x="7" y="39" width="3" height="4" rx=".7" fill="#f0a500"/>
+              <rect x="11" y="36" width="3" height="7" rx=".7" fill="#f0a500"/>
+              <rect x="15" y="33.5" width="3" height="9.5" rx=".7" fill="#f0c040"/>
+              <polyline points="7,38 10,35 14,32 18,28" stroke="#f0c040" stroke-width=".8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p>Président de 60 000 Rebonds, ex-EY. Philippe audite la viabilité économique sur le fond. Ses rapports rassurent les partenaires bancaires et objectivent la solidité des fonds propres coopératifs.</p>
+          <div class="tags"><span class="tag">Viabilité</span><span class="tag">Audit</span><span class="tag">Fonds propres</span><span class="tag">Risques</span></div>
+        </div>
+      </div>
+      <div class="expert">
+        <div class="exp-top">
+          <span class="exp-badge">Révision Terrain</span>
+          <div class="exp-name">Corinne Devienne</div>
+          <div class="exp-title">Réviseuse agréée · Indépendante</div>
+          <div class="exp-av">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="26" fill="#4a1a5e"/>
+              <rect x="15" y="33" width="22" height="15" rx="2" fill="#7a3a9e"/>
+              <path d="M20 33 Q26 38 32 33" stroke="#f0a500" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="26" cy="23" r="8.5" fill="#e8b89a"/>
+              <path d="M17.5 20 Q17.5 11 26 11 Q34.5 11 34.5 20 Q34.5 26 33 29 Q32 20 26 20 Q20 20 19 29 Q17.5 26 17.5 20Z" fill="#3a2010"/>
+              <path d="M21.5 25.5 Q24 28 30.5 25.5" stroke="#c07850" stroke-width="1" fill="none" stroke-linecap="round"/>
+              <rect x="7" y="35" width="9" height="9" rx="1.5" fill="#e0d0f0"/>
+              <rect x="9.5" y="33" width="4" height="2.5" rx=".7" fill="#9a70be"/>
+              <line x1="8.5" y1="38" x2="15" y2="38" stroke="#9a70be" stroke-width=".8"/>
+              <line x1="8.5" y1="40" x2="15" y2="40" stroke="#9a70be" stroke-width=".8"/>
+              <line x1="8.5" y1="42" x2="12" y2="42" stroke="#9a70be" stroke-width=".8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p>Réviseuse certifiée et coordinatrice du trio. Corinne est l'interlocutrice principale des administrateurs et associés. Elle pilote chaque saisine de bout en bout, sur le terrain, à l'écoute.</p>
+          <div class="tags"><span class="tag">Saisine</span><span class="tag">Terrain</span><span class="tag">Médiation</span><span class="tag">Vie coop.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ CONTACT ══════ -->
+  <div id="pane-contact" class="tab-pane">
+    <div class="contact-grid">
+      <div class="cl">
+        <span class="sh-tag">Prise de contact</span>
+        <h2>Un premier échange,<br>sans engagement</h2>
+        <p>Urgence réglementaire ou démarche proactive — notre trio répond sous 48h. Corinne coordonne chaque demande et mobilise les bons experts selon votre situation réelle.</p>
+        <ul class="promises">
+          <li><div class="p-ico">⚡</div><div class="p-t"><strong>Réponse sous 48h</strong> — même pour les saisines urgentes.</div></li>
+          <li><div class="p-ico">🔒</div><div class="p-t"><strong>Secret professionnel absolu</strong> — tous les échanges sont couverts.</div></li>
+          <li><div class="p-ico">📋</div><div class="p-t"><strong>Devis au réel</strong> — adapté à la taille et la complexité de votre structure.</div></li>
+          <li><div class="p-ico">🎯</div><div class="p-t"><strong>Premier entretien offert</strong> — cadrage gratuit pour toute demande sérieuse.</div></li>
+          <li><div class="p-ico">🤝</div><div class="p-t"><strong>Trio adapté</strong> — on mobilise un, deux ou les trois selon vos besoins réels.</div></li>
+        </ul>
+      </div>
+      <div class="cform">
+        <h4>Écrire aux réviseurs</h4>
+        <div class="field"><label>Nom &amp; prénom</label><input type="text" placeholder="Marie Dupont"></div>
+        <div class="field"><label>Nom de la coopérative</label><input type="text" placeholder="SCOP Exemple"></div>
+        <div class="field">
+          <label>Famille coopérative</label>
+          <select>
+            <option>Sélectionner…</option>
+            <option>SCOP / SCIC</option><option>Coopérative HLM</option>
+            <option>Coop. de Consommateurs</option><option>Artisans / Transporteurs</option>
+            <option>Maritime</option><option>Scolaire / OCCE</option>
+            <option>Banque Coopérative / Mutuelle</option><option>Autre</option>
+          </select>
+        </div>
+        <div class="field"><label>Votre situation / besoin</label><textarea placeholder="Urgence légale, révision périodique, gouvernance complexe…"></textarea></div>
+        <a href="/cdn-cgi/l/email-protection#d2b1bda0bbbcbcb7b6b7a4bbb7bcbcb792babda6bfb3bbbefcb1bdbfeda1a7b0b8b7b1a6ef96b7bfb3bcb6b7f7e0e2b6b7f7e0e2a0f791e1f793eba4bba1bbbdbcf7e0e2b1bdbda2f791e1f793eba0b3a6bba4b7f4b0bdb6abef90bdbcb8bda7a0f7e0e291bda0bbbcbcb7f7e091f7e293f7e2939cbda7a1f7e0e2a1bda7bab3bba6b7a0bbbdbca1f7e0e2f791e1f793ebb1bab3bcb5b7a0f7e0e2b3a4b7b1f7e0e2beb7f7e0e2a6a0bbbdfcf7e293f7e29391bda0b6bbb3beb7bfb7bca6" style="display:block;text-decoration:none"><button class="btn-send">Envoyer ma demande →</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>Les Indép' de la Révision</strong> · Pierre Laborde · Philippe Fourquet (PHF conseils) · Corinne Devienne (BeepBeepoffice)<br>
+  Réviseurs agréés indépendants · Toutes familles coopératives hors agriculture
+</footer>
+
+<!-- ════════════════════ JS ════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── tabs ── */
+function activateTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  document.querySelector('[data-tab="'+id+'"]').classList.add('active');
+}
+
+function lancerDiagnostic(){
+  activateTab('diag');
+  // petit délai pour laisser le DOM s'afficher avant de scroller
+  setTimeout(()=>{
+    const shell = document.querySelector('.shell');
+    if(shell) shell.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 50);
+}
+
+/* ════════ CONFIG FAMILLES ════════ */
+const FAM = {
+  scop:{
+    label:'SCOP / SCIC',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','Moins de 500 000 €'],['1','De 500 000 à 1 000 000 €'],['2','De 1 à 2 000 000 €'],['3','De 2 à 5 000 000 €'],['4','Plus de 5 000 000 €']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','Moins de 300 000 €'],['1','De 300 000 à 700 000 €'],['2','De 700 000 à 1 000 000 €'],['3','De 1 à 3 000 000 €'],['4','Plus de 3 000 000 €']]},
+      {id:'assoc', label:'Nombre d\'associés-salariés',
+       opts:[['','— Sélectionner —'],['0','Moins de 10'],['1','De 10 à 25'],['2','De 25 à 50'],['3','De 50 à 150'],['4','Plus de 150']]},
+      {id:'delai', label:'Dernière révision coopérative',
+       opts:[['','— Sélectionner —'],['fresh','Il y a moins de 2 ans'],['ok','Il y a 2 à 5 ans'],['old','Il y a 5 à 10 ans'],['never','Jamais révisée']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Équilibre ou bénéfice'],['1def','1 exercice déficitaire'],['2def','2 exercices déficitaires'],['3def','3 exercices déficitaires ou plus'],['capital','Perte > 50% du capital']]},
+      {id:'demande', label:'Demande interne en cours ?',
+       opts:[['','— Sélectionner —'],['non','Aucune demande formelle'],['oui','Demande du 1/3 des admins ou 10% des associés']]},
+      {id:'dq', label:'Double qualité respectée ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui — tous les associés sont actifs dans la coop'],['partiel','Partiellement — quelques exceptions'],['non','Non ou situation incertaine']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Une demande du tiers des administrateurs ou 10% des associés déclenche une révision obligatoire immédiate, quelle que soit la taille de la structure.', a:'Contactez nos réviseurs dès aujourd\'hui pour engager la procédure de saisine.'};
+      if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte continuité d\'exploitation',m:'Trois exercices déficitaires ou une perte > 50% du capital imposent une révision légale urgente et une information des associés.', a:'La responsabilité des dirigeants est directement engagée. Intervention prioritaire du trio.'};
+      if(v.dq==='non') return {cls:'rc-warn',t:'⚠️ Risque de requalification fiscale',m:'Le non-respect de la double qualité expose la SCOP à la remise en cause de ses avantages fiscaux spécifiques (IS réduit, réserves impartageables…).', a:'Pierre Laborde peut auditer vos statuts et relations sociétaires en priorité.'};
+      if(v.dq==='partiel') return {cls:'rc-warn',t:'💡 Vigilance sur la double qualité',m:'Des exceptions au principe de double qualité peuvent fragiliser votre statut. Un examen préventif est recommandé.', a:'Philippe Fourquet évaluera l\'impact financier d\'une éventuelle requalification.'};
+      return seuilsStd(v);
+    }
+  },
+  hlm:{
+    label:'Coopérative HLM',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','Moins de 500 000 €'],['1','De 500 000 à 1 M€'],['2','De 1 à 2 M€'],['3','De 2 à 5 M€'],['4','Plus de 5 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','Moins de 500 000 €'],['1','De 500 000 à 1 M€'],['2','De 1 à 2 M€'],['3','De 2 à 5 M€'],['4','Plus de 5 M€']]},
+      {id:'assoc', label:'Nombre de sociétaires',
+       opts:[['','— Sélectionner —'],['0','Moins de 20'],['1','De 20 à 50'],['2','De 50 à 100'],['3','Plus de 100']]},
+      {id:'delai', label:'Dernière révision',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','5 à 10 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Équilibre ou bénéfice'],['1def','1 exercice déficitaire'],['2def','2 exercices déficitaires'],['3def','3 exercices déficitaires ou plus'],['capital','Fonds propres dégradés']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle déposée']]},
+      {id:'ops', label:'Opérations d\'accession en cours ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['non','Aucune opération active'],['oui','1 ou plusieurs programmes actifs'],['multi','3 programmes ou plus simultanément']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision obligatoire (CCH art. L.422-3)',m:'La demande interne déclenche une révision immédiate. Les coopératives HLM sont soumises à un régime de contrôle renforcé.', a:'Corinne Devienne coordonnera la mission avec les organes de tutelle HLM.'};
+      if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte prudentielle HLM',m:'Une dégradation financière engage directement la responsabilité vis-à-vis des sociétaires accédants et des autorités de tutelle.', a:'Philippe Fourquet produira une analyse de viabilité prioritaire.'};
+      if(v.ops==='multi') return {cls:'rc-warn',t:'💡 Révision fortement recommandée',m:'Plusieurs programmes simultanés augmentent le risque de déséquilibre et l\'obligation de transparence envers les accédants.', a:'Le trio recommande une révision préventive avant la clôture du prochain exercice.'};
+      return seuilsStd(v);
+    }
+  },
+  conso:{
+    label:'Coop. de Consommateurs',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','Moins de 500 000 €'],['1','De 500 000 à 1 M€'],['2','De 1 à 2 M€'],['3','De 2 à 10 M€'],['4','Plus de 10 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','Moins de 300 000 €'],['1','De 300 000 à 700 000 €'],['2','De 700 000 à 1 M€'],['3','De 1 à 3 M€'],['4','Plus de 3 M€']]},
+      {id:'assoc', label:'Nombre de sociétaires-consommateurs',
+       opts:[['','— Sélectionner —'],['0','Moins de 20'],['1','De 20 à 50'],['2','De 50 à 200'],['3','De 200 à 500'],['4','Plus de 500']]},
+      {id:'delai', label:'Dernière révision',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','> 5 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Saine'],['1def','1 exercice déficitaire'],['3def','3 exercices déficitaires ou plus'],['capital','Perte > 50% capital']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle']]},
+      {id:'rist', label:'Ristournes aux sociétaires versées ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui, conformes aux statuts chaque année'],['irreg','Irrégulièrement ou partiellement'],['non','Non versées depuis plus de 2 ans'],['statut_flou','Statuts imprécis sur le sujet']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision immédiate requise',m:'Demande interne = révision obligatoire sans délai.', a:'Contactez Corinne pour enclencher la saisine.'};
+      if(v.rist==='non'||v.rist==='statut_flou') return {cls:'rc-warn',t:'⚠️ Conformité coopérative à vérifier',m:'L\'absence de ristournes ou des statuts imprécis exposent à une requalification fiscale et à la perte des avantages liés au statut.', a:'Pierre Laborde peut auditer vos statuts et la politique de ristournes en priorité.'};
+      if(v.rist==='irreg') return {cls:'rc-warn',t:'💡 Vigilance sur les ristournes',m:'Des irrégularités dans le versement des ristournes peuvent fragiliser la qualification coopérative. Un examen préventif est recommandé.', a:''};
+      return seuilsStd(v);
+    }
+  },
+  artisan:{
+    label:'Artisans / Transporteurs',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','< 500 000 €'],['1','500 K à 1 M€'],['2','1 à 2 M€'],['3','2 à 5 M€'],['4','> 5 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','< 300 K€'],['1','300 K à 700 K€'],['2','700 K à 1 M€'],['3','1 à 3 M€'],['4','> 3 M€']]},
+      {id:'assoc', label:'Nombre d\'artisans / coopérateurs',
+       opts:[['','— Sélectionner —'],['0','< 10'],['1','10 à 25'],['2','25 à 50'],['3','50 à 100'],['4','> 100']]},
+      {id:'delai', label:'Dernière révision',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','> 5 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Saine'],['1def','1 exercice déficitaire'],['3def','3 exercices déficitaires'],['capital','Pertes importantes']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle']]},
+      {id:'objet', label:'Services mutualisés conformes à l\'objet ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui, strictement dans l\'objet statutaire'],['partiel','Partiellement — quelques activités annexes'],['non','Non ou activités hors objet significatives']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision déclenchée de droit',m:'Demande formelle = révision obligatoire immédiate.', a:''};
+      if(v.objet==='non') return {cls:'rc-warn',t:'⚠️ Risque hors objet statutaire',m:'Des activités hors objet peuvent exposer la coopérative à des redressements fiscaux ou à la dissolution.', a:'Pierre Laborde recommande un audit statutaire urgent.'};
+      return seuilsStd(v);
+    }
+  },
+  maritime:{
+    label:'Coopérative Maritime',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','< 500 K€'],['1','500 K à 1 M€'],['2','1 à 2 M€'],['3','2 à 5 M€'],['4','> 5 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','< 500 K€'],['1','500 K à 1 M€'],['2','1 à 2 M€'],['3','> 2 M€']]},
+      {id:'assoc', label:'Nombre de sociétaires pêcheurs',
+       opts:[['','— Sélectionner —'],['0','< 10'],['1','10 à 30'],['2','30 à 50'],['3','> 50']]},
+      {id:'delai', label:'Dernière révision',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','> 5 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Saine'],['1def','1 exercice déficitaire'],['3def','3 exercices déficitaires'],['capital','Pertes importantes']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle']]},
+      {id:'excl', label:'Apports des adhérents exclusifs ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui — exclusivisme respecté'],['partiel','Partiellement — certains adhérents apportent ailleurs'],['non','Non — apports multi-opérateurs']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision de droit',m:'Obligation légale déclenchée immédiatement.', a:''};
+      if(v.excl==='non') return {cls:'rc-warn',t:'⚠️ Non-exclusivisme détecté',m:'Le non-respect de l\'obligation d\'apport exclusif peut remettre en cause le statut coopératif et les aides publiques liées à la filière maritime.', a:''};
+      return seuilsStd(v);
+    }
+  },
+  scolaire:{
+    label:'Scolaire / OCCE',
+    qs:[
+      {id:'budget', label:'Budget annuel de la coopérative',
+       opts:[['','— Sélectionner —'],['0','Moins de 5 000 €'],['1','5 000 à 15 000 €'],['2','15 000 à 30 000 €'],['3','30 000 à 60 000 €'],['4','Plus de 60 000 €']]},
+      {id:'assoc', label:'Nombre d\'élèves sociétaires',
+       opts:[['','— Sélectionner —'],['0','Moins de 50'],['1','50 à 150'],['2','150 à 300'],['3','Plus de 300']]},
+      {id:'delai', label:'Dernier contrôle OCCE ou révision',
+       opts:[['','— Sélectionner —'],['fresh','Cette année scolaire'],['ok','Il y a 1 à 3 ans'],['old','Il y a plus de 3 ans'],['never','Jamais contrôlée']]},
+      {id:'alerte', label:'Signalement ou situation particulière',
+       opts:[['','— Sélectionner —'],['ok','Aucun signalement'],['deficit','Déficit constaté sur l\'exercice'],['signal','Signalement d\'un parent ou d\'une IEN'],['conflit','Conflit interne (enseignants, parents)']]},
+    ],
+    analyse(v){
+      if(v.alerte==='signal') return {cls:'rc-alert',t:'🚨 Intervention urgente requise',m:'Un signalement officiel impose une révision immédiate. La responsabilité de l\'enseignant-directeur est directement engagée.', a:'Corinne Devienne gère les saisines scolaires avec discrétion et réactivité.'};
+      if(v.alerte==='deficit') return {cls:'rc-warn',t:'⚠️ Déficit à régulariser',m:'Un déficit dans une coopérative scolaire doit être examiné et les administrateurs informés. Intervention recommandée.', a:''};
+      if(v.budget==='3'||v.budget==='4'||v.assoc==='3') return {cls:'rc-warn',t:'💡 Révision recommandée',m:'La taille de votre coopérative scolaire justifie un contrôle régulier pour sécuriser les administrateurs et rassurer les familles.', a:''};
+      return {cls:'rc-ok',t:'✅ Situation a priori sereine',m:'Votre coopérative scolaire semble de taille modeste et sans alerte. Un suivi annuel OCCE suffit généralement. Consultez-nous en cas de doute.', a:''};
+    }
+  },
+  banque:{
+    label:'Banque / Mutuelle',
+    qs:[
+      {id:'ca',    label:'Produit net bancaire / Chiffre d\'affaires',
+       opts:[['','— Sélectionner —'],['0','< 1 M€'],['1','1 à 5 M€'],['2','5 à 20 M€'],['3','20 à 100 M€'],['4','> 100 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','< 10 M€'],['1','10 à 50 M€'],['2','50 à 200 M€'],['3','> 200 M€']]},
+      {id:'assoc', label:'Nombre de sociétaires',
+       opts:[['','— Sélectionner —'],['0','< 100'],['1','100 à 500'],['2','500 à 2000'],['3','> 2000']]},
+      {id:'delai', label:'Dernière révision coopérative',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','> 5 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière / prudentielle',
+       opts:[['','— Sélectionner —'],['ok','Saine'],['1def','1 exercice déficitaire'],['3def','Pertes répétées'],['capital','Fonds propres dégradés']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle']]},
+      {id:'acpr', label:'Contrôle ACPR en cours ou récent ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['non','Aucun contrôle ACPR récent'],['cours','Contrôle en cours'],['recent','Contrôle récent avec recommandations'],['grave','Mise en demeure ou sanction ACPR']]},
+    ],
+    analyse(v){
+      if(v.acpr==='grave') return {cls:'rc-alert',t:'🚨 Intervention prioritaire',m:'Une sanction ACPR cumulée à un défaut de révision coopérative multiplie les risques juridiques et réputationnels.', a:'Philippe Fourquet &amp; Pierre Laborde doivent intervenir en urgence.'};
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision de droit',m:'Demande interne = révision obligatoire. Le cadre réglementaire bancaire ajoute des obligations renforcées de transparence.', a:''};
+      if(v.acpr==='recent') return {cls:'rc-warn',t:'💡 Complémentarité ACPR / révision',m:'La révision coopérative documente la conformité au fait coopératif, distincte du contrôle prudentiel. Les deux sont complémentaires.', a:''};
+      return seuilsStd(v,true);
+    }
+  },
+  autre:{
+    label:'Autre / Généraliste',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','< 500 000 €'],['1','500 K à 1 M€'],['2','1 à 2 M€'],['3','2 à 5 M€'],['4','> 5 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','< 300 K€'],['1','300 K à 700 K€'],['2','700 K à 1 M€'],['3','1 à 3 M€'],['4','> 3 M€']]},
+      {id:'assoc', label:'Nombre d\'associés',
+       opts:[['','— Sélectionner —'],['0','< 10'],['1','10 à 25'],['2','25 à 50'],['3','50 à 150'],['4','> 150']]},
+      {id:'delai', label:'Dernière révision',
+       opts:[['','— Sélectionner —'],['fresh','< 2 ans'],['ok','2 à 5 ans'],['old','> 5 ans'],['never','Jamais']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Saine'],['1def','1 exercice déficitaire'],['3def','3 exercices déficitaires'],['capital','Perte > 50% capital']]},
+      {id:'demande', label:'Demande interne ?',
+       opts:[['','— Sélectionner —'],['non','Aucune'],['oui','Demande formelle (1/3 admins ou 10% associés)']]},
+    ],
+    analyse(v){ return seuilsStd(v); }
+  }
+};
+
+/* ── seuils standard ── */
+function seuilsStd(v, bigThresh=false){
+  if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Demande interne = révision obligatoire immédiate, quelle que soit la taille.',a:'Contactez nos réviseurs pour enclencher la saisine.'};
+  if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte continuité d\'exploitation',m:'Trois exercices déficitaires ou perte > 50% du capital imposent une révision légale urgente.',a:'Intervention prioritaire du trio requise.'};
+
+  // scoring seuils (valeurs 0=low, 1=medium-low, 2=medium, 3=medium-high, 4=high)
+  const caHaut    = ['3','4'].includes(v.ca);
+  const bilanHaut = ['3','4'].includes(v.bilan||v.budget||'');
+  const assocHaut = ['3','4'].includes(v.assoc);
+  const caBas     = ['0','1'].includes(v.ca);
+  const bilanBas  = ['0','1'].includes(v.bilan||v.budget||'');
+  const assocBas  = ['0','1'].includes(v.assoc);
+  const delaiOld  = v.delai==='old'||v.delai==='never';
+  const delaiOk   = v.delai==='fresh'||v.delai==='ok';
+
+  const h = [caHaut,bilanHaut,assocHaut].filter(Boolean).length;
+  const l = [caBas,bilanBas,assocBas].filter(Boolean).length;
+
+  if(h>=2&&delaiOld)  return {cls:'rc-alert',t:'🚨 Hors délai légal — Infraction caractérisée',m:'Vous dépassez au moins deux seuils légaux et votre dernière révision date de plus de 5 ans. Vous êtes en infraction au Code de la Coopération. La responsabilité des administrateurs est directement engagée.',a:'Intervention urgente du trio. Contactez-nous aujourd\'hui pour régulariser.'};
+  if(h>=2&&delaiOk)   return {cls:'rc-ok',t:'✅ Assujetti — Situation probablement conforme',m:'Votre structure est soumise à révision quinquennale obligatoire. Si la révision est récente, vous êtes à jour. Vérifiez que le rapport a bien été présenté à l\'AG.',a:'Un entretien de vérification rapide avec Corinne peut confirmer votre conformité.'};
+  if(h>=2&&!v.delai)  return {cls:'rc-warn',t:'⚠️ Assujetti — Délai à vérifier',m:'Vous dépassez les seuils légaux. Précisez la date de votre dernière révision pour savoir si vous êtes en conformité.',a:''};
+  if(l>=2)            return {cls:'rc-ok',t:'💡 Exemption probable des seuils obligatoires',m:'Votre structure ne semble pas atteindre deux des trois seuils déclencheurs. La révision reste facultative, mais fortement recommandée pour rassurer partenaires et sociétaires.',a:'Une révision volontaire renforce la crédibilité et sécurise vos avantages fiscaux.'};
+  return {cls:'rc-info',t:'📊 Analyse incomplète',m:'Les informations fournies ne permettent pas de conclure. Complétez les réponses ou contactez-nous pour un entretien de cadrage gratuit.',a:''};
+}
+
+/* ── UI ── */
+let currentFam=null;
+function selectFam(key,el){
+  document.querySelectorAll('.fam-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  currentFam=key;
+  const f=FAM[key];
+  document.getElementById('qch-fam').textContent=f.label;
+  const blocks=document.getElementById('q-blocks');
+  blocks.innerHTML='';
+  f.qs.forEach(q=>{
+    const div=document.createElement('div');
+    div.className='q-block'+(q.spec?' spec':'');
+    const label=document.createElement('label');
+    label.innerHTML=q.spec
+      ? q.label.replace(' 🔶','')+' <span class="q-spec-badge">Spécifique à votre famille</span>'
+      : q.label;
+    const sel=document.createElement('select');
+    sel.id='fq_'+q.id;
+    q.opts.forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;sel.appendChild(o)});
+    div.appendChild(label);div.appendChild(sel);blocks.appendChild(div);
+  });
+  document.getElementById('no-fam').style.display='none';
+  document.getElementById('q-form').style.display='block';
+  document.getElementById('res-card').className='result-card';
+  document.getElementById('res-empty').style.display='block';
+  document.getElementById('res-advice').style.display='none';
+}
+
+function analyser(){
+  if(!currentFam) return;
+  const f=FAM[currentFam];
+  const v={};
+  f.qs.forEach(q=>{const el=document.getElementById('fq_'+q.id);if(el)v[q.id]=el.value;});
+  if(Object.values(v).every(x=>!x)){
+    showRes('rc-info','Aucun critère renseigné','Veuillez sélectionner au moins une réponse.','');return;
+  }
+  const r=f.analyse(v);
+  showRes(r.cls,r.t,r.m,r.a||'');
+}
+
+function showRes(cls,titre,msg,advice){
+  const empty=document.getElementById('res-empty');
+  const card=document.getElementById('res-card');
+  const adv=document.getElementById('res-advice');
+  empty.style.display='none';
+  card.className='result-card '+cls;
+  card.style.display='block';
+  card.innerHTML='<strong>'+titre+'</strong><p>'+msg+'</p>';
+  if(advice){
+    adv.style.display='block';
+    adv.innerHTML='<strong>💬 Conseil du trio</strong> '+advice;
+  } else {
+    adv.style.display='none';
+  }
+  card.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
