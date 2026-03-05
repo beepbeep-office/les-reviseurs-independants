@@ -545,7 +545,7 @@ footer strong{color:var(--amber)}
             <rect x="13" y="29" width="2" height="7" rx=".5" fill="#f0c040"/>
           </svg>
         </div>
-        <div><div class="hc-name">Philippe Fourquet</div><div class="hc-role">Réviseur agréé · Indépendant</div><div class="hc-spec">Audit · Viabilité · Financement</div></div>
+        <div><div class="hc-name">Philippe Fourquet <span style="font-weight:400;font-size:.68rem;opacity:.6">· PHF Conseils</span></div><div class="hc-role">Réviseur agréé · Indépendant</div><div class="hc-spec">Audit · Viabilité · Financement</div></div>
       </div>
       <div class="hc">
         <div class="hc-av">
@@ -568,7 +568,7 @@ footer strong{color:var(--amber)}
             <line x1="8.5" y1="33.5" x2="13" y2="33.5" stroke="#9a70be" stroke-width=".6"/>
           </svg>
         </div>
-        <div><div class="hc-name">Corinne Devienne</div><div class="hc-role">Réviseuse agréée · Indépendante</div><div class="hc-spec">Saisine · Terrain · Médiation</div></div>
+        <div><div class="hc-name">Corinne Devienne <span style="font-weight:400;font-size:.68rem;opacity:.6">· BeepBeepOffice</span></div><div class="hc-role">Réviseuse agréée · Indépendante</div><div class="hc-spec">Saisine · Terrain · Médiation</div></div>
       </div>
     </div>
   </div>
@@ -611,6 +611,7 @@ footer strong{color:var(--amber)}
         <button class="fam-btn" onclick="selectFam('maritime',this)"><span class="fam-ico">⚓</span><span class="fam-lbl">Maritime</span></button>
         <button class="fam-btn" onclick="selectFam('scolaire',this)"><span class="fam-ico">🎒</span><span class="fam-lbl">Scolaire / OCCE</span></button>
         <button class="fam-btn" onclick="selectFam('banque',this)"><span class="fam-ico">🏦</span><span class="fam-lbl">Banque / Mutuelle</span></button>
+        <button class="fam-btn" onclick="selectFam('sica',this)"><span class="fam-ico">🌾</span><span class="fam-lbl">SICA</span></button>
         <button class="fam-btn" onclick="selectFam('autre',this)"><span class="fam-ico">🔍</span><span class="fam-lbl">Autre / Généraliste</span></button>
       </div>
 
@@ -831,7 +832,7 @@ footer strong{color:var(--amber)}
         <div class="exp-top">
           <span class="exp-badge">Stratégie Financière</span>
           <div class="exp-name">Philippe Fourquet</div>
-          <div class="exp-title">Réviseur agréé · Indépendant</div>
+          <div class="exp-title">PHF Conseils · Réviseur agréé · Indépendant</div>
           <div class="exp-av">
             <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="52" height="52" rx="26" fill="#1a4a2e"/>
@@ -856,7 +857,7 @@ footer strong{color:var(--amber)}
         <div class="exp-top">
           <span class="exp-badge">Révision Terrain</span>
           <div class="exp-name">Corinne Devienne</div>
-          <div class="exp-title">Réviseuse agréée · Indépendante</div>
+          <div class="exp-title">BeepBeepOffice · Réviseuse agréée · Indépendante</div>
           <div class="exp-av">
             <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="52" height="52" rx="26" fill="#4a1a5e"/>
@@ -887,7 +888,7 @@ footer strong{color:var(--amber)}
       <div class="cl">
         <span class="sh-tag">Prise de contact</span>
         <h2>Un premier échange,<br>sans engagement</h2>
-        <p>Urgence réglementaire ou démarche proactive — notre trio répond sous 48h. Corinne coordonne chaque demande et mobilise les bons experts selon votre situation réelle.</p>
+        <p>Urgence réglementaire ou démarche proactive — notre trio répond sous 48h. Corinne (BeepBeepOffice) coordonne chaque demande et mobilise les bons experts selon votre situation réelle.</p>
         <ul class="promises">
           <li><div class="p-ico">⚡</div><div class="p-t"><strong>Réponse sous 48h</strong> — même pour les saisines urgentes.</div></li>
           <li><div class="p-ico">🔒</div><div class="p-t"><strong>Secret professionnel absolu</strong> — tous les échanges sont couverts.</div></li>
@@ -907,7 +908,7 @@ footer strong{color:var(--amber)}
             <option>SCOP / SCIC</option><option>Coopérative HLM</option>
             <option>Coop. de Consommateurs</option><option>Artisans / Transporteurs</option>
             <option>Maritime</option><option>Scolaire / OCCE</option>
-            <option>Banque Coopérative / Mutuelle</option><option>Autre</option>
+            <option>Banque Coopérative / Mutuelle</option><option>SICA</option><option>Autre</option>
           </select>
         </div>
         <div class="field"><label>Votre situation / besoin</label><textarea placeholder="Urgence légale, révision périodique, gouvernance complexe…"></textarea></div>
@@ -918,8 +919,8 @@ footer strong{color:var(--amber)}
 </div>
 
 <footer>
-  <strong>Les Indép' de la Révision</strong> · Pierre Laborde · Philippe Fourquet (PHF conseils) · Corinne Devienne (BeepBeepoffice)<br>
-  Réviseurs agréés indépendants · Toutes familles coopératives hors agriculture
+  <strong>Les Indép' de la Révision</strong> · Pierre Laborde · Philippe Fourquet (PHF Conseils) · Corinne Devienne (BeepBeepOffice)<br>
+  Réviseurs agréés indépendants · Toutes familles coopératives hors agriculture · HCCA
 </footer>
 
 <!-- ════════════════════ JS ════════════════════ -->
@@ -962,7 +963,7 @@ const FAM = {
        opts:[['','— Sélectionner —'],['oui','Oui — tous les associés sont actifs dans la coop'],['partiel','Partiellement — quelques exceptions'],['non','Non ou situation incertaine']]},
     ],
     analyse(v){
-      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Une demande du tiers des administrateurs ou 10% des associés déclenche une révision obligatoire immédiate, quelle que soit la taille de la structure.', a:'Contactez nos réviseurs dès aujourd\'hui pour engager la procédure de saisine.'};
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Une demande du tiers des administrateurs ou 10% des associés déclenche une révision obligatoire immédiate, quelle que soit la taille de la structure.', a:'Contactez Corinne Devienne dès aujourd\'hui pour engager la procédure de saisine.'};
       if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte continuité d\'exploitation',m:'Trois exercices déficitaires ou une perte > 50% du capital imposent une révision légale urgente et une information des associés.', a:'La responsabilité des dirigeants est directement engagée. Intervention prioritaire du trio.'};
       if(v.dq==='non') return {cls:'rc-warn',t:'⚠️ Risque de requalification fiscale',m:'Le non-respect de la double qualité expose la SCOP à la remise en cause de ses avantages fiscaux spécifiques (IS réduit, réserves impartageables…).', a:'Pierre Laborde peut auditer vos statuts et relations sociétaires en priorité.'};
       if(v.dq==='partiel') return {cls:'rc-warn',t:'💡 Vigilance sur la double qualité',m:'Des exceptions au principe de double qualité peuvent fragiliser votre statut. Un examen préventif est recommandé.', a:'Philippe Fourquet évaluera l\'impact financier d\'une éventuelle requalification.'};
@@ -1111,6 +1112,35 @@ const FAM = {
       return seuilsStd(v,true);
     }
   },
+  sica:{
+    label:'SICA — Société d\'Intérêt Collectif Agricole',
+    qs:[
+      {id:'ca',    label:'Chiffre d\'affaires annuel HT',
+       opts:[['','— Sélectionner —'],['0','Moins de 500 000 €'],['1','De 500 000 à 1 M€'],['2','De 1 à 2 M€'],['3','De 2 à 5 M€'],['4','Plus de 5 M€']]},
+      {id:'bilan', label:'Total du bilan',
+       opts:[['','— Sélectionner —'],['0','Moins de 300 000 €'],['1','De 300 000 à 700 000 €'],['2','De 700 000 à 1 M€'],['3','De 1 à 3 M€'],['4','Plus de 3 M€']]},
+      {id:'assoc', label:'Nombre moyen d\'associés',
+       opts:[['','— Sélectionner —'],['0','Moins de 10'],['1','De 10 à 25'],['2','De 25 à 50'],['3','De 50 à 150'],['4','Plus de 150']]},
+      {id:'delai', label:'Dernière révision coopérative',
+       opts:[['','— Sélectionner —'],['fresh','Il y a moins de 2 ans'],['ok','Il y a 2 à 5 ans'],['old','Il y a 5 à 10 ans'],['never','Jamais révisée']]},
+      {id:'pertes', label:'Situation financière',
+       opts:[['','— Sélectionner —'],['ok','Équilibre ou bénéfice'],['1def','1 exercice déficitaire'],['2def','2 exercices déficitaires'],['3def','3 exercices déficitaires ou plus'],['capital','Perte > 50% du capital']]},
+      {id:'demande', label:'Demande interne en cours ?',
+       opts:[['','— Sélectionner —'],['non','Aucune demande formelle'],['oui','Demande du 1/3 des admins ou 10% des associés']]},
+      {id:'objet', label:'Activité conforme à l\'objet SICA ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui — activités strictement dans l\'objet statutaire'],['partiel','Partiellement — quelques activités périphériques'],['non','Non ou objet flou / dépassé']]},
+      {id:'exclus', label:'Exclusivisme des apports respecté ? 🔶', spec:true,
+       opts:[['','— Sélectionner —'],['oui','Oui — les associés apportent exclusivement à la SICA'],['partiel','Partiellement — apports partagés avec d\'autres structures'],['non','Non — apports multi-opérateurs significatifs']]},
+    ],
+    analyse(v){
+      if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Une demande du tiers des administrateurs ou de 10% des associés déclenche une révision coopérative obligatoire immédiate, indépendamment de votre chiffre d\'affaires et de vos bilans.',a:'Contactez Corinne Devienne dès aujourd\'hui pour engager la procédure de saisine.'};
+      if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte continuité d\'exploitation',m:'Trois exercices déficitaires consécutifs ou une perte excédant 50% du capital imposent une révision légale urgente et une information des associés de la SICA.',a:'La responsabilité des dirigeants est directement engagée. Intervention prioritaire du trio.'};
+      if(v.objet==='non') return {cls:'rc-warn',t:'⚠️ Risque lié à l\'objet statutaire',m:'Un objet statutaire flou ou dépassé expose la SICA à une remise en cause de son statut coopératif et à la perte de ses avantages fiscaux spécifiques.',a:'Pierre Laborde recommande un audit statutaire en urgence pour sécuriser la qualification juridique.'};
+      if(v.exclus==='non') return {cls:'rc-warn',t:'⚠️ Non-exclusivisme détecté',m:'Le non-respect de l\'exclusivisme des apports fragilise la qualification coopérative de la SICA et peut entraîner un redressement fiscal ou la perte d\'agréments.',a:'Pierre Laborde et Philippe Fourquet peuvent intervenir conjointement sur ce risque.'};
+      if(v.objet==='partiel'||v.exclus==='partiel') return {cls:'rc-warn',t:'💡 Vigilance sur la conformité coopérative',m:'Des exceptions au principe d\'exclusivisme ou des activités périphériques à l\'objet méritent un examen préventif pour sécuriser le statut de votre SICA.',a:'Un entretien de cadrage gratuit avec le trio permettra d\'évaluer le niveau de risque.'};
+      return seuilsStd(v);
+    }
+  },
   autre:{
     label:'Autre / Généraliste',
     qs:[
@@ -1133,7 +1163,7 @@ const FAM = {
 
 /* ── seuils standard ── */
 function seuilsStd(v, bigThresh=false){
-  if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Demande interne = révision obligatoire immédiate, quelle que soit la taille.',a:'Contactez nos réviseurs pour enclencher la saisine.'};
+  if(v.demande==='oui') return {cls:'rc-alert',t:'🚨 Révision exigée de droit',m:'Demande interne = révision obligatoire immédiate, quelle que soit la taille.',a:'Contactez Corinne Devienne pour enclencher la saisine.'};
   if(v.pertes==='3def'||v.pertes==='capital') return {cls:'rc-alert',t:'⚠️ Alerte continuité d\'exploitation',m:'Trois exercices déficitaires ou perte > 50% du capital imposent une révision légale urgente.',a:'Intervention prioritaire du trio requise.'};
 
   // scoring seuils (valeurs 0=low, 1=medium-low, 2=medium, 3=medium-high, 4=high)
